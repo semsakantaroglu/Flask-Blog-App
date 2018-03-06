@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% from "includes/_formhelpers.html" import render_field %}
+{% block body %}
+
+{% if error %}
+<div class ="alert alert-warning">{{ error }}</div>
+{% else %}
+<h4>Makale Güncelleme</h4>
+<form method="POST">
+    <p>
+        {{ render_field(form.title,class = "form-control") }}
+        {{ render_field(form.body,class = "form-control",id = "ckeditor") }}
+    </p>
+    <button type= "submit" class = "btn btn-danger">Makale Güncelle</button>
+</form>
+{% endif %}
+
+{% endblock body %}
